@@ -1,10 +1,10 @@
+import os
 import streamlit as st
 from pathlib import Path
-from langchain.agents import create_sql_agent
-from langchain.sql_database import SQLDatabase
-from langchain.agents.agent_types import AgentType
-from langchain.callbacks import StreamlitCallbackHandler
-from langchain.agents.agent_toolkits import SQLDatabaseToolkit
+from dotenv import load_dotenv
+from langchain_community.agent_toolkits import create_sql_agent, SQLDatabaseToolkit
+from langchain_community.utilities import SQLDatabase
+from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
 from sqlalchemy import create_engine
 import sqlite3
 from langchain_groq import ChatGroq
@@ -28,13 +28,24 @@ if radio_opt.index(selected_opt)==1:
 else:
     db_uri=LOCALDB
 
-api_key=st.sidebar.text_input(label="GRoq API Key",type="password")
+load_dotenv()
+api_key = (os.environ.get("GROQ_API_KEY") or "").strip() or st.sidebar.text_input(label="Groq API Key", type="password")
 
 if not db_uri:
     st.info("Please enter the database information and uri")
+    st.stop()
 
 if not api_key:
-    st.info("Please add the groq api key")
+    st.info("Please add your Groq API key in the sidebar (get one at [console.groq.com](https://console.groq.com))")
+    st.stop()
+
+# Detect placeholder or invalid-looking keys to avoid 401 errors
+placeholder_patterns = ("your_groq_api_key_here", "gsk_xxx", "xxxxxxxx", "_here", "example")
+if api_key and any(p in api_key.lower() for p in placeholder_patterns):
+    st.error(
+        "Your Groq API key looks like a placeholder. Replace it in the `.env` file or in the sidebar with a real key from [console.groq.com](https://console.groq.com)."
+    )
+    st.stop()
 
 ## LLM model
 llm=ChatGroq(groq_api_key=api_key,model_name="llama-3.1-8b-instant",streaming=True)
@@ -64,7 +75,9 @@ agent=create_sql_agent(
     llm=llm,
     toolkit=toolkit,
     verbose=True,
-    agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION
+    agent_type="tool-calling",
+    max_iterations=10,
+    agent_executor_kwargs={"handle_parsing_errors": True},
 )
 
 if "messages" not in st.session_state or st.sidebar.button("Clear message history"):

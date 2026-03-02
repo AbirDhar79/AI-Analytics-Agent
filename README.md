@@ -255,6 +255,18 @@ streamlit run app.py
 
 ---
 
+## 🔧 Troubleshooting
+
+- **"Permission denied: machine_id_v4"** – Streamlit needs to write to `%USERPROFILE%\.streamlit`. Run the app with usage stats disabled:  
+  `.\run-app.ps1`  
+  Or in PowerShell: `$env:STREAMLIT_BROWSER_GATHER_USAGE_STATS="false"; python -m streamlit run app.py`  
+  If it still fails, create the folder and ensure you have write access:  
+  `New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.streamlit"`
+- **"Did not find groq_api_key"** – Enter your Groq API key in the sidebar before using the chat. Get a key at [console.groq.com](https://console.groq.com).
+- **"streamlit is not recognized"** – Use `python -m streamlit run app.py` instead of `streamlit run app.py`.
+
+---
+
 ## 👤 Author
 
 Developed by **Souvik Karmakar**
