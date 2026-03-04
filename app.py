@@ -147,7 +147,7 @@ def ask_database(question: str, db: SQLDatabase, llm: ChatGroq) -> dict:
     """Generate SQL, execute it (with one self-correction retry), then format the result."""
     schema = db.get_table_info()
     dialect = db.dialect
-    executor = QuerySQLDatabaseTool(db=db)
+    executor = QuerySQLDataBaseTool(db=db)
 
     try:
         # Attempt 1
