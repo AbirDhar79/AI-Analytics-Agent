@@ -4,8 +4,14 @@ An AI-powered Natural Language to SQL analytics assistant built using LangChain 
 This system enables users to query relational databases using conversational language instead of writing SQL manually.
 
 ---
-## Deployed on StreamLit Cloud :- 
-### Live App link :- https://ai-sql-analytics-assistant-dfpqvpnzlnm2vkvrsclyrb.streamlit.app/
+## 🌐 Live deployments
+
+| Platform | Link |
+|----------|------|
+| **Streamlit Cloud** | [Open app](https://share.streamlit.io) *(deploy and add your app URL here)* |
+| **Hugging Face Spaces** | [Open app](https://huggingface.co/spaces) *(create your Space and add your Space URL here)* |
+
+See [Deploying this app](#-deploying-this-app) below for step-by-step hosting on both platforms.
 
 ## 📌 Overview
 
@@ -267,8 +273,28 @@ streamlit run app.py
 
 ---
 
+## 🚀 Deploying this app
+
+### Streamlit Cloud
+
+1. Push this repo to **GitHub**.
+2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
+3. Click **New app** → choose this repo → set **Main file path** to `app.py` → Deploy.
+4. Add your app URL to the [Live deployments](#-live-deployments) table above.
+
+### Hugging Face Spaces
+
+1. Go to [huggingface.co/spaces](https://huggingface.co/spaces) and sign in.
+2. Click **Create new Space** → name it (e.g. `Ai_Sql_Analytics_Assistant`) → choose **Streamlit** SDK → Create.
+3. Either upload this project’s files or connect the Space to your GitHub repo.
+4. In GitHub: **Settings → Secrets and variables → Actions** → add `HF_TOKEN` (create a write token at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)).
+5. In `.github/workflows/sync-to-hub.yml`, replace `YOUR_HF_USERNAME` and `YOUR_SPACE_NAME` with your Hugging Face username and Space name. Pushes to `main` will sync to your Space.
+6. Add your Space URL to the [Live deployments](#-live-deployments) table above.
+
+---
+
 ## 👤 Author
 
-Developed by **Souvik Karmakar**
+**Abir Dhar**
 
 GenAI | Data Analytics | AI Automation | NL2SQL Systems

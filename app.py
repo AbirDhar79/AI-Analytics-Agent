@@ -350,7 +350,7 @@ No vector store needed: the schema IS the knowledge base.
 with st.sidebar.expander("🌐 Public deployment"):
     st.info(
         "Each visitor uses their **own Groq key** → their own rate limits.  \n"
-        "Safe to deploy publicly on Streamlit Cloud."
+        "Safe to deploy on **Streamlit Cloud** and **Hugging Face Spaces**."
     )
 
 # ── Sidebar ── Clear history ──────────────────────────────────────────────────
