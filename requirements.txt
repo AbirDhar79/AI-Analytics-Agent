@@ -35,14 +35,16 @@
 # numexpr
 
 
-streamlit>=1.33
-langchain==0.1.16
-langchain-community==0.0.38
-langchain-core==0.1.53
-langchain-groq==0.1.5
-SQLAlchemy>=2.0
-pandas
-duckdb
-mysql-connector-python
-python-dotenv
+streamlit==1.35.0
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-core==0.2.38
+langchain-groq==0.1.9
+langchain-text-splitters==0.2.4
+SQLAlchemy==2.0.36
+pandas==2.2.2
+duckdb==0.10.3
+mysql-connector-python==8.3.0
+python-dotenv==1.0.1
 altair==4.2.2
+pydantic==2.7
