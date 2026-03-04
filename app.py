@@ -11,7 +11,7 @@ import sqlite3
 from pathlib import Path
 
 import streamlit as st
-from langchain_community.tools import QuerySQLDatabaseTool
+from langchain_community.tools.sql_database.tool import QuerySQLDatabaseTool
 from langchain_community.utilities import SQLDatabase
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_groq import ChatGroq
