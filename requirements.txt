@@ -24,7 +24,7 @@ langchain-groq
 wikipedia
 validators==0.28.1
 huggingface_hub
-streamlit
+streamlit>=1.33.0
 altair==4.2.2
 duckduckgo-search
 unstructured
