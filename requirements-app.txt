@@ -1,10 +1,12 @@
-# Pinned deps for the SQL chat app so it works with the original app.py (no code changes).
-# Use: pip install -r requirements-app.txt
-# Then add GROQ_API_KEY to .env and run: streamlit run app.py
+# Dependencies for the SQL chat app.
+# Run: pip install -r requirements-app.txt
+# Then: streamlit run app.py   (or advance_app.py)
 
-langchain==0.1.16
+langchain
+langchain-community
+langchain-core
+langchain-groq
 streamlit
 python-dotenv
-langchain-groq
 SQLAlchemy
 mysql-connector-python
