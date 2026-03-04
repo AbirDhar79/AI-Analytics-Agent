@@ -3,7 +3,7 @@ AI-Powered SQL Analytics Assistant.
 
 3-step flow (no agent, no loop):
   1. LLM reads schema  ->  generates SQL
-  2. QuerySQLDatabaseTool  ->  runs SQL on real DB
+  2. QuerySQLDataBaseTool  ->  runs SQL on real DB
   3. LLM reads result  ->  formats plain-English answer
 """
 import re
@@ -11,7 +11,7 @@ import sqlite3
 from pathlib import Path
 
 import streamlit as st
-from langchain_community.tools.sql_database.tool import QuerySQLDatabaseTool
+from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from langchain_community.utilities import SQLDatabase
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_groq import ChatGroq
