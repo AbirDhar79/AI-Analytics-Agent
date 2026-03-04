@@ -289,7 +289,7 @@ streamlit run app.py
 3. Either upload this project’s files or connect the Space to your GitHub repo.
 4. In GitHub: **Settings → Secrets and variables → Actions** → add `HF_TOKEN` (create a write token at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)).
 5. In `.github/workflows/sync-to-hub.yml`, replace `YOUR_HF_USERNAME` and `YOUR_SPACE_NAME` with your Hugging Face username and Space name. Pushes to `main` will sync to your Space.
-6. Add your Space URL to the [Live deployments](#-live-deployments) table above.
+6. Add your Space URL to the [Live deployments](#-live-deployments) table above sd.
 
 ---
 
