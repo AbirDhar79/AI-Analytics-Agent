@@ -1,35 +1,48 @@
+# langchain==0.1.16
+# langchain-community
+# langchain-openai==0.0.8
+# fastapi
+# langserve
+# sse_starlette
+# python-dotenv
+# ipykernel
+# pypdf
+# bs4
+# arxiv
+# pymupdf
+# wikipedia
+# langchain-text-splitters
+# chromadb
+# sentence_transformers
+# langchain_huggingface
+# faiss-cpu
+# langchain_chroma
+# duckdb
+# pandas
+# openai
+# langchain-groq
+# wikipedia
+# validators==0.28.1
+# huggingface_hub
+# streamlit>=1.33.0
+# altair==4.2.2
+# duckduckgo-search
+# unstructured
+# mysql-connector-python
+# SQLAlchemy
+# youtube_transcript_api
+# pytube
+# numexpr
+
+
+streamlit>=1.33
 langchain==0.1.16
-langchain-community
-langchain-openai==0.0.8
-fastapi
-langserve
-sse_starlette
-python-dotenv
-ipykernel
-pypdf
-bs4
-arxiv
-pymupdf
-wikipedia
-langchain-text-splitters
-chromadb
-sentence_transformers
-langchain_huggingface
-faiss-cpu
-langchain_chroma
-duckdb
-pandas
-openai
+langchain-community==0.0.38
+langchain-core==0.1.53
 langchain-groq
-wikipedia
-validators==0.28.1
-huggingface_hub
-streamlit>=1.33.0
-altair==4.2.2
-duckduckgo-search
-unstructured
+SQLAlchemy>=2.0
+pandas
+duckdb
 mysql-connector-python
-SQLAlchemy
-youtube_transcript_api
-pytube
-numexpr
+python-dotenv
+altair==4.2.2
